@@ -135,11 +135,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Clientes.cpp" />
     <ClCompile Include="ConexionBD.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Proveedores.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Clientes.h" />
     <ClInclude Include="ConexionBD.h" />
+    <ClInclude Include="Proveedores.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
