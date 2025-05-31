@@ -137,7 +137,9 @@
   <ItemGroup>
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ConexionBD.cpp" />
+    <ClCompile Include="Empleados.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Marcas.cpp" />
     <ClCompile Include="Productos.cpp" />
     <ClCompile Include="Proveedores.cpp" />
     <ClCompile Include="Ventas.cpp" />
@@ -145,6 +147,8 @@
   <ItemGroup>
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="ConexionBD.h" />
+    <ClInclude Include="Empleados.h" />
+    <ClInclude Include="Marcas.h" />
     <ClInclude Include="Productos.h" />
     <ClInclude Include="Proveedores.h" />
     <ClInclude Include="Ventas.h" />

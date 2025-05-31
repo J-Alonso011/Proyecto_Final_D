@@ -1,12 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\crisf\\OneDrive\\Escritorio\\Proyecto_Final_D\\sln_proyecto_final_D\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Proveedores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Proveedores.h",
+              "DocumentMoniker": "C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
+              "RelativeDocumentMoniker": "vista\\Proveedores.h",
+              "ToolTip": "C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
+              "RelativeToolTip": "vista\\Proveedores.h",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAiwK0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-31T01:48:36.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cliente.h",
+              "DocumentMoniker": "C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
+              "RelativeDocumentMoniker": "vista\\Cliente.h",
+              "ToolTip": "C:\\Users\\wanner.cuque\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
+              "RelativeToolTip": "vista\\Cliente.h",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAiwMIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-31T01:46:27.468Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
