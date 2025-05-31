@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\",
+  "WorkspaceRootPath": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Puestos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Puestos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Marcas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Empleados.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Proveedores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{208B56EC-FA4D-4527-8F05-42851DEF7BDF}|vista\\vista.vcxproj|solutionrelative:vista\\Cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -35,49 +43,73 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Puestos.h",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Puestos.h",
+              "RelativeDocumentMoniker": "vista\\Puestos.h",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Puestos.h",
+              "RelativeToolTip": "vista\\Puestos.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-31T04:27:01.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\main.cpp",
+              "RelativeDocumentMoniker": "vista\\main.cpp",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\main.cpp",
+              "RelativeToolTip": "vista\\main.cpp",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAFoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:22:14.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Marcas.h",
-              "DocumentMoniker": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h",
               "RelativeDocumentMoniker": "vista\\Marcas.h",
-              "ToolTip": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Marcas.h",
               "RelativeToolTip": "vista\\Marcas.h",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAcwIEAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAIEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-31T03:03:20.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Empleados.h",
-              "DocumentMoniker": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h",
               "RelativeDocumentMoniker": "vista\\Empleados.h",
-              "ToolTip": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Empleados.h",
               "RelativeToolTip": "vista\\Empleados.h",
               "ViewState": "AgIAAL8AAAAAAAAAAAAcwOIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-31T03:02:09.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T03:02:09.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Proveedores.h",
-              "DocumentMoniker": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
               "RelativeDocumentMoniker": "vista\\Proveedores.h",
-              "ToolTip": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Proveedores.h",
               "RelativeToolTip": "vista\\Proveedores.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-31T01:48:36.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T01:48:36.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Cliente.h",
-              "DocumentMoniker": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
+              "DocumentMoniker": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
               "RelativeDocumentMoniker": "vista\\Cliente.h",
-              "ToolTip": "C:\\Users\\Joel\\Desktop\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
+              "ToolTip": "C:\\Users\\bryan\\OneDrive\\Escritorio\\proyecto final_D\\Proyecto_Final_D\\sln_proyecto_final_D\\vista\\Cliente.h",
               "RelativeToolTip": "vista\\Cliente.h",
               "ViewState": "AgIAAKsAAAAAAAAAAAAiwMIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
