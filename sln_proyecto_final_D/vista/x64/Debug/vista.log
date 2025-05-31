@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\alons\Desktop\Proyecto Final Programacion\sln_proyecto_final_D\vista\Ventas.h(198,32): warning C4244: '=': conversión de 'uint64_t' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "main.cpp")
+  
+C:\Users\alons\Desktop\Proyecto Final Programacion\sln_proyecto_final_D\vista\Ventas.h(273,16): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "main.cpp")
+  
+C:\Users\alons\Desktop\Proyecto Final Programacion\sln_proyecto_final_D\vista\Compras.h(136,26): warning C4244: 'inicializando': conversión de 'uint64_t' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "main.cpp")
+  
+  vista.vcxproj -> C:\Users\alons\Desktop\Proyecto Final Programacion\sln_proyecto_final_D\x64\Debug\vista.exe

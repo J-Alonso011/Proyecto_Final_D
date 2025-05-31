@@ -8,7 +8,7 @@
 using namespace std;
 class Cliente : Persona {
 	//atributos
-private:
+public:
 	int idCliente = 0;
 	string correo_electronico, fechaingreso;
 
@@ -48,21 +48,19 @@ public:
 		getline(cin, apellidos);
 		cout << "Ingrese Nit: ";
 		getline(cin, NIT);
-		cout << "Ingrese Genero: ";
+		cout << "Ingrese Genero (1 masculino 0 femenino): ";
 		cin >> genero;
 		cin.ignore();
 		cout << "Ingrese Telefono: ";
 		getline(cin, telefono);
 		cout << "Ingrese Correo Electronico: ";
 		getline(cin, correo_electronico);
-		cout << "Ingrese fecha de ingreso (YYYY-MM-DD): ";
-		getline(cin, fechaingreso);
 		int q_estado;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
 		if (cn.getConector()) {
 			string g = to_string(genero);
-			string insert = "INSERT INTO clientes(nombres,apellidos,NIT,genero,telefono,correo_electronico,fechaingreso)VALUES('" + nombres + "','" + apellidos + "','" + NIT + "'," + g + ",'" + telefono + "','" + correo_electronico + "','" + fechaingreso + "'); ";
+			string insert = "INSERT INTO clientes(nombres,apellidos,NIT,genero,telefono,correo_electronico,fechaingreso)VALUES('" + nombres + "','" + apellidos + "','" + NIT + "'," + g + ",'" + telefono + "','" + correo_electronico + "',now()); ";
 			const char* i = insert.c_str();
 			q_estado = mysql_query(cn.getConector(), i);
 			if (!q_estado) { cout << "ingreso exitoso..." << endl; }
@@ -72,7 +70,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerClientes() {
 		cout << "-----------------------------CLIENTES----------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -86,7 +84,17 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Cliente:" << fila[0] << ", " << "Nombres:" << fila[1] << ", " << "Apellidos:" << fila[2] << ", " << "Nit:" << fila[3] << ", " << "Genero:" << fila[4] << ", " << "Telefono:" << fila[5] << ", " << "Correo Electronico:" << fila[6] << ", " << "Fecha de Ingreso:" << fila[7] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Cliente:" << fila[0] << "\n"
+						<< "Nombres:" << fila[1] << "\n"
+						<< "Apellidos:" << fila[2] << "\n"
+						<< "Nit:" << fila[3] << "\n"
+						<< "Genero:" << fila[4] << "\n"
+						<< "Telefono:" << fila[5] << "\n"
+						<< "Correo Electronico:" << fila[6] << "\n"
+						<< "Fecha de Ingreso:" << fila[7] << "\n"
+						<< "-----------------------------CLIENTES----------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -112,15 +120,13 @@ public:
 		getline(cin, telefono);
 		cout << "Ingrese Correo Electronico: ";
 		getline(cin, correo_electronico);
-		cout << "Ingrese fecha de ingreso (YYYY-MM-DD): ";
-		getline(cin, fechaingreso);
 		int q_estado = 0;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
 		if (cn.getConector()) {
 			string idC = to_string(idCliente);
 			string g = to_string(genero);
-			string update = "UPDATE clientes SET nombres = '" + nombres + "', apellidos = '" + apellidos + "', NIT = '" + NIT + "', genero = " + g + ", telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "', fechaingreso = '" + fechaingreso + "' WHERE idCliente = " + idC + ";";
+			string update = "UPDATE clientes SET nombres = '" + nombres + "', apellidos = '" + apellidos + "', NIT = '" + NIT + "', genero = " + g + ", telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "', fechaingreso = now() WHERE idCliente = " + idC + ";";
 			const char* u = update.c_str();
 			q_estado = mysql_query(cn.getConector(), u);
 			if (!q_estado) { cout << "modificacion exitosa" << endl; }
@@ -170,19 +176,19 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerClientes();
 				break;
 			case 3:
+				leerClientes();
 				actualizar();
 				break;
 			case 4:
+				leerClientes();
 				borrar();
 				break;
 			case 5:
 				cout << "Regresando al menu principal..." << endl;
-				break;
-			case 6:
-				cout << "Saliendo...............";
+				return;
 				break;
 			default:
 				cout << "Opci n inv lida. Intente de nuevo." << endl;
@@ -190,7 +196,7 @@ public:
 
 			system("pause");
 			system("cls");
-		} while (opcionClientes != 6);
+		} while (opcionClientes != 5);
 	}
 };
 

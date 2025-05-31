@@ -1,5 +1,6 @@
 #pragma once
 #include "ConexionBD.h"
+#include "Puestos.h"
 #include "Persona.h"
 #include <mysql.h>
 #include <iostream>
@@ -7,6 +8,7 @@
 
 using namespace std;
 class Empleados : public Persona {
+	Puestos pues;
 	//atributos
 private:
 	int idEmpleado = 0, idPuesto = 0;
@@ -62,18 +64,17 @@ public:
 		getline(cin, telefono);
 		cout << "Ingrese DPI: ";
 		getline(cin, DPI);
-		cout << "Ingrese Genero: ";
+		cout << "Ingrese Genero (1 masculino 0 femenino): ";
 		cin >> genero;
 		cin.ignore();
 		cout << "Ingrese Fecha Nacimiento (YYYY-MM-DD): ";
 		getline(cin, fecha_nacimiento);
+		pues.leerPuesto();
 		cout << "Ingrese idPuesto: ";
 		cin >> idPuesto;
 		cin.ignore();
 		cout << "Ingrese fecha de Inicio Labores (YYYY-MM-DD): ";
 		getline(cin, fecha_inicio_labores);
-		cout << "Ingrese fecha de ingreso (YYYY-MM-DD): ";
-		getline(cin, fecha_ingreso);
 		int q_estado;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
@@ -90,7 +91,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerEmpleado() {
 		cout << "-----------------------------EMPLEADOS----------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -104,7 +105,20 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Empleado:" << fila[0] << ", " << "Nombres:" << fila[1] << ", " << "Apellidos:" << fila[2] << ", " << "Direccion:" << fila[3] << ", " << "Telefono:" << fila[4] << ", " << "DPI:" << fila[5] << ", " << "Genero:" << fila[6] << ", " << "Fecha_nacimiento:" << fila[7] << ", " << "Id Puesto:" << fila[8] << ", " << "Fecha_Inicio_Labores:" << fila[9] << ", " << "Fecha de Ingreso:" << fila[10] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Empleado:" << fila[0] << "\n"
+						<< "Nombres:" << fila[1] << "\n"
+						<< "Apellidos:" << fila[2] << "\n"
+						<< "Direccion:" << fila[3] << "\n"
+						<< "Telefono:" << fila[4] << "\n"
+						<< "DPI:" << fila[5] << "\n"
+						<< "Genero:" << fila[6] << "\n"
+						<< "Fecha_nacimiento:" << fila[7] << "\n"
+						<< "Id Puesto:" << fila[8] << "\n"
+						<< "Fecha_Inicio_Labores:" << fila[9] << "\n"
+						<< "Fecha de Ingreso:" << fila[10] << "\n"
+						<< "-----------------------------EMPLEADOS----------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -127,18 +141,17 @@ public:
 		getline(cin, telefono);
 		cout << "Ingrese DPI: ";
 		getline(cin, DPI);
-		cout << "Ingrese Genero: ";
+		cout << "Ingrese Genero (1 masculino 0 femenino): ";
 		cin >> genero;
 		cin.ignore();
 		cout << "Ingrese Fecha Nacimiento (YYYY-MM-DD): ";
 		getline(cin, fecha_nacimiento);
+		pues.leerPuesto();
 		cout << "Ingrese idPuesto: ";
 		cin >> idPuesto;
 		cin.ignore();
 		cout << "Ingrese fecha de Inicio Labores (YYYY-MM-DD): ";
 		getline(cin, fecha_inicio_labores);
-		cout << "Ingrese fecha de ingreso (YYYY-MM-DD): ";
-		getline(cin, fecha_ingreso);
 		int q_estado = 0;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
@@ -146,7 +159,7 @@ public:
 			string idE = to_string(idEmpleado);
 			string g = to_string(genero);
 			string idP = to_string(idPuesto);
-			string update = "UPDATE empleados SET nombres = '" + nombres + "', apellidos = '" + apellidos + "', direccion = '" + direccion + "', telefono = '" + telefono + "',DPI ='" + DPI + "',genero =" + g + ",fecha_nacimiento='" + fecha_nacimiento + "',idPuesto=" + idP + ",fecha_inicio_labores='" + fecha_inicio_labores + "',fechaingreso='" + fecha_ingreso + "'  ""WHERE idEmpleado = " + idE + ";";
+			string update = "UPDATE empleados SET nombres = '" + nombres + "', apellidos = '" + apellidos + "', direccion = '" + direccion + "', telefono = '" + telefono + "',DPI ='" + DPI + "',genero =" + g + ",fecha_nacimiento='" + fecha_nacimiento + "',idPuesto=" + idP + ",fecha_inicio_labores='" + fecha_inicio_labores + "',fechaingreso=now()  ""WHERE idEmpleado = " + idE + ";";
 			const char* u = update.c_str();
 			q_estado = mysql_query(cn.getConector(), u);
 			if (!q_estado) { cout << "modificacion exitosa" << endl; }
@@ -196,27 +209,27 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerEmpleado();
 				break;
 			case 3:
+				leerEmpleado();
 				actualizar();
 				break;
 			case 4:
+				leerEmpleado();
 				borrar();
 				break;
 			case 5:
 				cout << "Regresando al menu principal..." << endl;
-				break;
-			case 6:
-				cout << "Saliendo...............";
+				return;
 				break;
 			default:
-				cout << "Opción inválida. Intente de nuevo." << endl;
+				cout << "Opci n inv lida. Intente de nuevo." << endl;
 			}
 
 			system("pause");
 			system("cls");
-		} while (opcionEmpleados != 6);
+		} while (opcionEmpleados != 5);
 	}
 
 

@@ -1,11 +1,13 @@
 #pragma once
 #include "ConexionBD.h"
+#include "Marcas.h"
 #include <mysql.h>
 #include <iostream>
 #include <string>
 
 using namespace std;
 class Productos {
+	Marcas mar;
 	//atributos
 protected:
 	int idProducto = 0, idMarca = 0, existencia = 0;
@@ -53,6 +55,7 @@ public:
 		cout << "\n--- Crear Productos ---\n";
 		cout << "Ingrese Producto: ";
 		getline(cin, producto);
+		mar.leerMarca();
 		cout << "Ingrese idMarca: ";
 		cin >> idMarca;
 		cin.ignore();
@@ -69,8 +72,6 @@ public:
 		cout << "Ingrese Existencia: ";
 		cin >> existencia;
 		cin.ignore();
-		cout << "Ingrese Fecha Ingreso (YYYY-MM-DD): ";
-		getline(cin, fecha_ingreso);
 		int q_estado;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
@@ -79,7 +80,7 @@ public:
 			string prc = to_string(precio_costo);
 			string prv = to_string(precio_venta);
 			string e = to_string(existencia);
-			string insert = "INSERT INTO productos(producto,idMarca,Descripcion,Imagen,precio_costo,precio_venta,existencia,fecha_ingreso)VALUES('" + producto + "'," + idM + ",'" + Descripcion + "','" + Imagen + "'," + prc + "," + prv + ",'" + e + "','" + fecha_ingreso + "'); ";
+			string insert = "INSERT INTO productos(producto,idMarca,Descripcion,Imagen,precio_costo,precio_venta,existencia,fecha_ingreso)VALUES('" + producto + "'," + idM + ",'" + Descripcion + "','" + Imagen + "'," + prc + "," + prv + ",'" + e + "',now()); ";
 			const char* i = insert.c_str();
 			q_estado = mysql_query(cn.getConector(), i);
 			if (!q_estado) { cout << "ingreso exitoso..." << endl; }
@@ -89,7 +90,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerProductos() {
 		cout << "-----------------------------PRODUCTOS----------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -103,7 +104,18 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Producto:" << fila[0] << ", " << "Producto:" << fila[1] << ", " << "Id_Marca:" << fila[2] << ", " << "Descripcion:" << fila[3] << ", " << "Imagen:" << fila[4] << ", " << "Precio Costo:" << fila[5] << ", " << "Precio Venta:" << fila[6] << ", " << "Existencia:" << fila[7] << ", " << "Fecha de Ingreso:" << fila[8] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Producto:" << fila[0] << "\n"
+						<< "Producto:" << fila[1] << "\n"
+						<< "Id_Marca:" << fila[2] << "\n"
+						<< "Descripcion:" << fila[3] << "\n"
+						<< "Imagen:" << fila[4] << "\n"
+						<< "Precio Costo:" << fila[5] << "\n"
+						<< "Precio Venta:" << fila[6] << "\n"
+						<< "Existencia:" << fila[7] << "\n"
+						<< "Fecha de Ingreso:" << fila[8] << "\n"
+						<< "----------------------------------PRODUCTOS-----------------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -118,6 +130,7 @@ public:
 		cin.ignore();
 		cout << "Ingrese Producto: ";
 		getline(cin, producto);
+		mar.leerMarca();
 		cout << "Ingrese idMarca: ";
 		cin >> idMarca;
 		cin.ignore();
@@ -134,8 +147,6 @@ public:
 		cout << "Ingrese Existencia: ";
 		cin >> existencia;
 		cin.ignore();
-		cout << "Ingrese Fecha Ingreso (YYYY-MM-DD): ";
-		getline(cin, fecha_ingreso);
 		int q_estado = 0;
 		ConexionBD cn = ConexionBD();
 		cn.abrir_conexion();
@@ -145,7 +156,7 @@ public:
 			string prc = to_string(precio_costo);
 			string prv = to_string(precio_venta);
 			string e = to_string(existencia);
-			string update = "UPDATE productos SET producto = '" + producto + "', idMarca = " + idM + ", Descripcion = '" + Descripcion + "', Imagen = '" + Imagen + "',precio_costo =" + prc + ",precio_venta =" + prv + ",existencia=" + e + ",fecha_ingreso='" + fecha_ingreso + "'  ""WHERE idProducto = " + idPro + ";";
+			string update = "UPDATE productos SET producto = '" + producto + "', idMarca = " + idM + ", Descripcion = '" + Descripcion + "', Imagen = '" + Imagen + "',precio_costo =" + prc + ",precio_venta =" + prv + ",existencia=" + e + ",fecha_ingreso=now()  ""WHERE idProducto = " + idPro + ";";
 			const char* u = update.c_str();
 			q_estado = mysql_query(cn.getConector(), u);
 			if (!q_estado) { cout << "modificacion exitosa" << endl; }
@@ -195,12 +206,14 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerProductos();
 				break;
 			case 3:
+				leerProductos();
 				actualizar();
 				break;
 			case 4:
+				leerProductos();
 				borrar();
 				break;
 			case 5:

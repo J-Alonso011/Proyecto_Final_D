@@ -13,7 +13,7 @@ protected:
 public:
 	//constructores
 	Marcas() {}
-	Marcas(int idM, string m) { idMarca = idM; marca = m; }
+	Marcas(int idM, string m) { idMarca = idM;marca = m; }
 	//metodos
 	//set
 	void setidMarca(int idM) { idMarca = idM; }
@@ -40,7 +40,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerMarca() {
 		cout << "-------------------------------------Marcas-------------------------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -54,7 +54,11 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Marca:" << fila[0] << ", " << "Marca:" << fila[1] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Marca:" << fila[0] << "\n"
+						<< "Marca:" << fila[1] << "\n"
+						<< "-------------------------------------Marcas-------------------------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -123,12 +127,14 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerMarca();
 				break;
 			case 3:
+				leerMarca();
 				actualizar();
 				break;
 			case 4:
+				leerMarca();
 				borrar();
 				break;
 			case 5:
@@ -138,7 +144,7 @@ public:
 				cout << "Saliendo...............";
 				break;
 			default:
-				cout << "Opción inválida. Intente de nuevo." << endl;
+				cout << "Opci n inv lida. Intente de nuevo." << endl;
 			}
 
 			system("pause");
@@ -146,3 +152,4 @@ public:
 		} while (opcionMarcas != 6);
 	}
 };
+

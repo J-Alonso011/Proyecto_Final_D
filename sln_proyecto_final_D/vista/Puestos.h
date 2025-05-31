@@ -15,7 +15,7 @@ protected:
 public:
 	//constructores
 	Puestos() {}
-	Puestos(int idP, string pu) { idPuesto = idP; puesto = pu; }
+	Puestos(int idP, string pu) { idPuesto = idP;puesto = pu; }
 	//metodos
 	//set
 	void setidPuesto(int idP) { idPuesto = idP; }
@@ -42,7 +42,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerPuesto() {
 		cout << "-------------------------------------PUESTOS-------------------------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -56,7 +56,11 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Puesto:" << fila[0] << ", " << "Puesto:" << fila[1] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Puesto:" << fila[0] << "\n"
+						<< "Puesto:" << fila[1] << "\n"
+						<< "-------------------------------------PUESTOS-------------------------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -116,7 +120,6 @@ public:
 			cout << "3. Actualizar Puestos\n";
 			cout << "4. Eliminar Puestos\n";
 			cout << "5. Menu Principal\n";
-			cout << "6. Salir\n";
 			cout << "Seleccione una opcion: ";
 			cin >> opcionPuestos;
 			cin.ignore();
@@ -126,27 +129,27 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerPuesto();
 				break;
 			case 3:
+				leerPuesto();
 				actualizar();
 				break;
 			case 4:
+				leerPuesto();
 				borrar();
 				break;
 			case 5:
 				cout << "Regresando al menu principal..." << endl;
-				break;
-			case 6:
-				cout << "Saliendo...............";
+				return;
 				break;
 			default:
-				cout << "Opción inválida. Intente de nuevo." << endl;
+				cout << "Opci n inv lida. Intente de nuevo." << endl;
 			}
 
 			system("pause");
 			system("cls");
-		} while (opcionPuestos != 6);
+		} while (opcionPuestos != 5);
 	}
 };
 

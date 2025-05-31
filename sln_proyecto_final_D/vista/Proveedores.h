@@ -58,7 +58,7 @@ public:
 		cn.cerrar_conexion();
 	}
 	///////////////////////////////LEER/////////////////////////////////
-	void leer() {
+	void leerProveedor() {
 		cout << "-----------------------------PROVEEDORES----------------------------" << endl;
 		int q_estado = 0;
 		//instanciar la clase
@@ -72,7 +72,14 @@ public:
 			q_estado = mysql_query(cn.getConector(), c);
 			if (!q_estado) {
 				resultado = mysql_store_result(cn.getConector());
-				while (fila = mysql_fetch_row(resultado)) { cout << "Id Proveedor:" << fila[0] << ", " << "Proveedor:" << fila[1] << ", " << "Nit:" << fila[2] << ", " << "Direccion:" << fila[3] << ", " << "Telefono:" << fila[4] << ", " << endl; }
+				while (fila = mysql_fetch_row(resultado)) {
+					cout << "Id Proveedor:" << fila[0] << "\n"
+						<< "Proveedor:" << fila[1] << "\n"
+						<< "Nit:" << fila[2] << "\n"
+						<< "Direccion:" << fila[3] << "\n"
+						<< "Telefono:" << fila[4] << "\n"
+						<< "-----------------------------PROVEEDORES----------------------------" << endl;
+				}
 			}
 			else { cout << "fallo consulta" << endl; }
 		}
@@ -148,19 +155,19 @@ public:
 				crear();
 				break;
 			case 2:
-				leer();
+				leerProveedor();
 				break;
 			case 3:
+				leerProveedor();
 				actualizar();
 				break;
 			case 4:
+				leerProveedor();
 				borrar();
 				break;
 			case 5:
 				cout << "Regresando al menu principal..." << endl;
-				break;
-			case 6:
-				cout << "Saliendo...............";
+				return;
 				break;
 			default:
 				cout << "Opci n inv lida. Intente de nuevo." << endl;
@@ -168,7 +175,7 @@ public:
 
 			system("pause");
 			system("cls");
-		} while (opcionProveedores != 6);
+		} while (opcionProveedores != 5);
 	}
 };
 
