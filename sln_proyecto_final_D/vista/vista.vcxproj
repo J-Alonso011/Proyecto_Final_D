@@ -135,14 +135,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ConexionBD.cpp" />
+    <ClCompile Include="Empleados.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Marcas.cpp" />
     <ClCompile Include="Productos.cpp" />
+    <ClCompile Include="Proveedores.cpp" />
+    <ClCompile Include="Puestos.cpp" />
     <ClCompile Include="Ventas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cliente.h" />
     <ClInclude Include="ConexionBD.h" />
+    <ClInclude Include="Empleados.h" />
+    <ClInclude Include="Marcas.h" />
     <ClInclude Include="Productos.h" />
+    <ClInclude Include="Proveedores.h" />
+    <ClInclude Include="Puestos.h" />
     <ClInclude Include="Ventas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
