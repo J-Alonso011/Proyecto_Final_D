@@ -113,7 +113,7 @@ public:
 		getline(cin, apellidos);
 		cout << "Ingrese Nit: ";
 		getline(cin, NIT);
-		cout << "Ingrese Genero: ";
+		cout << "Ingrese Genero (1 masculino 0 femenino): ";
 		cin >> genero;
 		cin.ignore();
 		cout << "Ingrese Telefono: ";
@@ -166,7 +166,6 @@ public:
 			cout << "3. Actualizar Cliente\n";
 			cout << "4. Eliminar Cliente\n";
 			cout << "5. Menu Principal\n";
-			cout << "6. Salir\n";
 			cout << "Seleccione una opcion: ";
 			cin >> opcionClientes;
 			cin.ignore();

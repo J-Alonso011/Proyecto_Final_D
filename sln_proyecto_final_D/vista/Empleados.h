@@ -199,7 +199,6 @@ public:
 			cout << "3. Actualizar Empleado\n";
 			cout << "4. Eliminar Empleado\n";
 			cout << "5. Menu Principal\n";
-			cout << "6. Salir\n";
 			cout << "Seleccione una opcion: ";
 			cin >> opcionEmpleados;
 			cin.ignore();

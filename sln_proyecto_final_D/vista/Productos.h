@@ -196,7 +196,6 @@ public:
 			cout << "3. Actualizar Producto\n";
 			cout << "4. Eliminar Producto\n";
 			cout << "5. Menu Principal\n";
-			cout << "6. Salir\n";
 			cout << "Seleccione una opcion: ";
 			cin >> opcionProductos;
 			cin.ignore();
@@ -218,9 +217,7 @@ public:
 				break;
 			case 5:
 				cout << "Regresando al menu principal..." << endl;
-				break;
-			case 6:
-				cout << "Saliendo...............";
+				return;
 				break;
 			default:
 				cout << "Opci n inv lida. Intente de nuevo." << endl;
@@ -228,6 +225,6 @@ public:
 
 			system("pause");
 			system("cls");
-		} while (opcionProductos != 6);
+		} while (opcionProductos != 5);
 	}
 };

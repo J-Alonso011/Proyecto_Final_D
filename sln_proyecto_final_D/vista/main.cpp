@@ -26,16 +26,17 @@ int main() {
 
     do {
         cout << "\n========= MENU CLIENTES =========\n";
-        cout << "1. Puestos\n";
-        cout << "2. Proveedores\n";
-        cout << "3. Marcas\n";
-        cout << "4. Clientes\n";
-        cout << "5. Productos\n";
-        cout << "6. Empleados\n";
-        cout << "7. Crear Venta-detalle\n";
-        cout << "8. Imprimir Factura\n";
-        cout << "9. Compras y compras detalle\n";
-        cout << "10. Salir\n";
+        cout << "1. Tabla Puestos\n";
+        cout << "2. Tabla Proveedores\n";
+        cout << "3. Tabla Marcas\n";
+        cout << "4. Tabla Clientes\n";
+        cout << "5. Tabla Productos\n";
+        cout << "6. Tabla Empleados\n";
+        cout << "7. Crear Venta y ventas detalle\n";
+        cout << "8. Imprimir Factura Ventas\n";
+        cout << "9. Crear Compras y compras detalle\n";
+        cout << "10. Imprimir Factura Compras\n";
+        cout << "11. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
@@ -75,9 +76,22 @@ int main() {
             break;
         }
         case 9:
-            cc.crearCompraCompleta();
+            cc.menuComprasCompleto();
             break;
         case 10:
+        {
+
+            cc.leerComprasCompleta();
+            int idCompraBuscar;
+            cout << "Ingrese el ID de la compra que desea imprimir: ";
+            cin >> idCompraBuscar;
+            cc.setidCompra(idCompraBuscar);
+            cc.imprimirFacturaCompra();
+            system("pause");
+            break;
+        }
+        break;
+        case 11:
             cout << "Saliendo del programa..." << endl;
             break;
         default:
@@ -86,7 +100,7 @@ int main() {
 
         system("pause");
         system("cls");
-    } while (opcion != 10);
+    } while (opcion != 11);
 
     return 0;
 }
