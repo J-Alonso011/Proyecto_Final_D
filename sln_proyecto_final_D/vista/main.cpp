@@ -25,7 +25,7 @@ int main() {
 
 
     do {
-        cout << "\n========= MENU CLIENTES =========\n";
+        cout << "\n========= MENU PRINCIPAL =========\n";
         cout << "1. Tabla Puestos\n";
         cout << "2. Tabla Proveedores\n";
         cout << "3. Tabla Marcas\n";
